@@ -7,6 +7,7 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
+//i am calculating the collatz sequence and store it in a buffer
 void write_collatz(int n, char *buf, size_t sz) {
     size_t pos = 0;
     int ret;
@@ -56,7 +57,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    if (ftruncate(fd, (off_t)total) < 0) {
+    if (ftruncate(fd, (off_t)total) < 0) {//total shared memory space gets 4096 bytes per child
         perror("FTRUNCATE");
         close(fd);
         shm_unlink(SHM_NAME);
