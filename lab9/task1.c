@@ -21,7 +21,7 @@ int main(int argc, char**argv){
 
 
     if (argc != 2) {
-        fprintf(stderr, "argument number error", argv[0]);
+        fprintf(stderr, "argument number error");
         return 1;
     }
 
